@@ -5,8 +5,7 @@
 			<div class="row">
 				<div class="col-sm-3 col-sm-offset-1">
 					<div class="login-form">
-						<h1>Thanks for order</h1>
-
+						<h1>Cảm Ơn Quý Khách Đã Mua Hàng</h1>
 					</div>
 				</div>
 			</div>

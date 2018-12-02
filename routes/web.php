@@ -30,6 +30,8 @@ Route::post('/save-shipping-details', 'CheckoutController@save_shipping_details'
 
 // comment routes are here
 Route::post('/comment', 'CommentController@comment');
+Route::get('/all-comment', 'CommentController@all_comment');
+Route::get('/delete-comment/{comment_id}', 'CommentController@delete_comment');
 // customer login and logut are here
 Route::post('/customer_login', 'CheckoutController@customer_login');
 Route::get('/customer_logout', 'CheckoutController@customer_logout');

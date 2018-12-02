@@ -17,19 +17,18 @@
                                     <span>{{$product_by_details->product_price}}VNĐ</span>
                                     <form action="{{url('/add-to-cart')}}" method="post">
                                     {{ csrf_field() }}
-                                        <label>Quantity:</label>
+                                        <label>Số lượng:</label>
                                         <input name="qty" type="number" value="1" />
                                         <input type="hidden" name="product_id" value="{{$product_by_details->product_id}}">
                                         <button type="submit" class="btn btn-fefault cart">
                                             <i class="fa fa-shopping-cart"></i>
-                                            Add to cart
+                                            Mua
                                         </button>
                                     </form>
 								</span>
-								<p><b>Availability:</b> In Stock</p>
-								<p><b>Condition:</b> New</p>
-                                <p><b>Brand:</b> {{$product_by_details->manufacture_name}}</p>
-                                <p><b>Brand:</b> {{$product_by_details->category_name}}</p>
+								<p><b>Tình Trạng:</b> Có sẵn</p>
+                                <p><b>Thương Hiệu:</b> {{$product_by_details->manufacture_name}}</p>
+                                <p><b>Mặt Hàng:</b> {{$product_by_details->category_name}}</p>
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->

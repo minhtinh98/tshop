@@ -3,8 +3,8 @@
 <section id="cart_items">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li class="active">Shopping Cart</li>
+				  <li><a href="#">Trang Chủ</a></li>
+				  <li class="active">Giỏ Hàng</li>
 				</ol>
 			</div>
 			<div class="table-responsive cart_info">
@@ -15,12 +15,12 @@
 				<table class="table table-condensed ">
 					<thead>
 						<tr class="cart_menu">
-                            <td class="image">Image</td>
-							<td class="description">Name</td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
-							<td>Action</td>
+                            <td class="image">Ảnh</td>
+							<td class="description">Tên</td>
+							<td class="price">Giá</td>
+							<td class="quantity">Số lượng</td>
+							<td class="total">Tổng</td>
+							<td>Hành động</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -60,25 +60,21 @@
 
 	<section id="do_action">
 		<div class="container">
-			<div class="heading">
-				<h3>What would you like to do next?</h3>
-				<p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
-			</div>
 			<div class="row">
 				<div class="col-sm-8">
 					<div class="total_area">
 						<ul>
-							<li>Cart Sub Total <span>{{Cart::subtotal()}}</span></li>
-							<li>Eco Tax <span>{{Cart::tax()}}</span></li>
-							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>{{Cart::total()}}</span></li>
+							<li>Tổng tiền trong giỏ hàng <span>{{Cart::subtotal()}}</span></li>
+							<li>Thuế <span>{{Cart::tax()}}</span></li>
+							<li>Phí vận chuyển <span>Free</span></li>
+							<li>Tổng cộng <span>{{Cart::total()}}</span></li>
 						</ul>
-                            <a class="btn btn-default update" href="">Update</a>
+                            <a class="btn btn-default update" href="">Cập nhật</a>
                             <?php $customer_id=Session::get('customer_id');?>
                                 <?php if($customer_id != NULL){?>
-                                    <li><a class="btn btn-default " href="{{URL::to('/checkout')}}"> Checkout</a></li>
+                                    <li><a class="btn btn-default " href="{{URL::to('/checkout')}}"> Thanh toán</a></li>
                                 <?php }else{ ?>
-                                    <li><a class="btn btn-default check_out" href="{{URL::to('/login-check')}}"> Checkout</a></li>
+                                    <li><a class="btn btn-default check_out" href="{{URL::to('/login-check')}}"> Thanh toán</a></li>
                                     <?php } ?>
 					</div>
 				</div>

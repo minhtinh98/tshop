@@ -63,7 +63,7 @@ class CheckoutController extends Controller
             Session::put('customer_id',$result->customer_id);
             return Redirect::to('/checkout');
         }else{
-            return Redirect::to('/login-ckeck');
+            return Redirect::to('/login-check');
         }
     }
     public function payment(){

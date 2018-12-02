@@ -54,8 +54,7 @@
 			<div class="row-fluid">
 				<div class="login-box">
 					<div class="icons">
-						<a href="index.html"><i class="halflings-icon home"></i></a>
-						<a href="#"><i class="halflings-icon cog"></i></a>
+						<a href="{{URL::to('/')}}"><i class="halflings-icon home"></i></a>
                     </div>
                     <p class="alert-danger">
                     <?php
@@ -66,7 +65,7 @@
                     }
                     ?>
                     </p>
-					<h2>Login to your account</h2>
+					<h2>T-SHOP ADMIN</h2>
                     <form class="form-horizontal" action="{{url('/admin-dashboard')}}" method="post">
                     {{csrf_field()}}
 						<fieldset>

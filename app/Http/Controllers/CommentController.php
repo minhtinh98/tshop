@@ -16,4 +16,18 @@ class CommentController extends Controller
         Session::put('comment_id',$comment_id);
         return redirect('/');
     }
+    public function all_comment(){
+        $all_comment_info = DB::table('tbl_comment')->get();
+        $manage_comment = view('admin.all_comment')
+        ->with('all_comment_info',$all_comment_info);
+        return view('admin_layout')
+        ->with('admin.all_comment',$manage_comment);
+    }
+    public function delete_comment($comment_id){
+        DB::table('tbl_comment')
+        ->where('comment_id',$comment_id)
+        ->delete();
+        Session::get('messege','comment Deleted seccessfully !');
+        return Redirect::to('/all-comment');
+    }
 }

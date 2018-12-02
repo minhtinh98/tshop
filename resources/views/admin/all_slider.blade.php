@@ -35,7 +35,7 @@
                           @foreach($all_slider as $v_slider)
 						  <tbody>
 							<tr>
-								<td>{{ $v_slider->slider_id}}l</td>
+								<td>{{ $v_slider->slider_id}}</td>
                                 <td><img src="{{URL::to($v_slider->slider_image)}}" style="width:200px; height:80px"></td>
 								<td class="center">
                                     @if($v_slider->publication_status==1)
@@ -51,15 +51,15 @@
 								</td>
 								<td class="center">
                                     @if($v_slider->publication_status==1)
-									<a class="btn btn-danger" href="{{URL::to('/unactive-slider/' .$v_slider->slider_id)}}">
+									<a class="btn btn-danger" href="{{URL::to('/unactive-slider/' .$v_slider->slider_id)}}" data-toggle="tooltip" title="Turn-on">
 										<i class="halflings-icon white thumbs-down"></i>
                                     </a>
                                     @else
-                                    <a class="btn btn-success" href="{{URL::to('/active-slider/' .$v_slider->slider_id)}}">
+                                    <a class="btn btn-success" href="{{URL::to('/active-slider/' .$v_slider->slider_id)}}" data-toggle="tooltip" title="Turn-off">
 										<i class="halflings-icon white thumbs-up"></i>
                                     </a>
                                     @endif
-                                    <a class="btn btn-success" href="{{URL::to('/delete-slider/' .$v_slider->slider_id)}}" id="delete">
+                                    <a class="btn btn-success" href="{{URL::to('/delete-slider/' .$v_slider->slider_id)}}" id="delete" data-toggle="tooltip" title="delete">
 										<i class="halflings-icon white trash"></i>
 									</a>
 								</td>

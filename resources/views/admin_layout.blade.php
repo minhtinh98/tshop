@@ -54,7 +54,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="{{URL::to('/')}}"><span>Metro</span></a>
+				<a class="brand" href="{{URL::to('/')}}"><span>TSHOP</span></a>
 
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -359,8 +359,7 @@
 							</ul>
 						</li>
 						<li><a href="{{URL::to('/manage-order')}}"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage Order</span></a></li>
-						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Shop Name</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Delivery Man</span></a></li>
+						<li><a href="{{URL::to('/all-comment')}}"><i class="icon-font"></i><span class="hidden-tablet">Comment</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -453,6 +452,11 @@
                 };
             });
         });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+            });
         </script>
 </body>
 

@@ -4,8 +4,8 @@
 		<div class="container col-sm-12">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li class="active">Shopping Cart</li>
+				  <li><a href="#">Trang chủ</a></li>
+				  <li class="active">Thanh Toán</li>
 				</ol>
 			</div>
 			<div class="table-responsive cart_info">
@@ -16,12 +16,12 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Image</td>
-							<td class="description">Name</td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
-							<td>Action</td>
+							<td class="image">Ảnh</td>
+							<td class="description">Tên</td>
+							<td class="price">Giá</td>
+							<td class="quantity">Số Lượng</td>
+							<td class="total">Tổng</td>
+							<td>Hành Động</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -76,8 +76,7 @@
 		</div>
 		<div class="paymentCont col-sm-8">
 					<div class="headingWrap">
-							<h3 class="headingTop text-center">Select Your Payment Method</h3>
-							<p class="text-center">Created with bootsrap button and using radio button</p>
+							<h3 class="headingTop text-center">Hãy chọn phương thức thanh toán</h3>
 					</div>
                         <form action="{{url('/order_place')}}" method="post">
                             {{csrf_field()}}
@@ -86,7 +85,7 @@
 				                <input type="radio" name="payment_method" value="visa" > Visa<br>
 				                <input type="radio" name="payment_method" value="mastercard"> Master Card<br>
 				                <input type="radio" name="payment_method" value="paypal">Paypal<br>
-                                <input type="submit" name="" value="Done" class="btn btn-success">
+                                <input type="submit" name="" value="Xong" class="btn btn-success">
                         </form>
 				        </div>
 				</div>
