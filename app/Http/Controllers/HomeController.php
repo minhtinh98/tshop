@@ -67,6 +67,7 @@ class HomeController extends Controller
             ->join('customer','customer.customer_id','=','tbl_comment.customer_id')
             ->select('*', 'customer.customer_id as uid')
             ->where('tbl_comment.product_id',$product_id)
+            ->limit(6)
             ->get();
 
         $manage_product_by_details = view('pages.product_details')

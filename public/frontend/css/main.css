@@ -2440,3 +2440,20 @@ textarea {
 .contact-info .social-networks ul li a:hover {
     color: #FE980F;
 }
+.comtent-comment li{
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+.media{
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+.media-left {
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 10px;
+}
+.media-body {
+    display: table-cell;
+    vertical-align: top;
+}

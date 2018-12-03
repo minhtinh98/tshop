@@ -61,13 +61,20 @@
 									</form>
                                 <?php } ?>
 								<div class="col-sm-12">
-									<ul>
-										<p>{{ count($comment_by_product) }}</p>
-										@foreach($comment_by_product as $comment)
-										<p>{{ $comment->customer_name }}</p>
-										<li>{{ $comment->comment_text }}</li>
+									<ul class="comtent-comment">
+                                        @foreach($comment_by_product as $comment)
+                                        <div class="media">
+                                        <div class="media-left">
+                                            <img src="{{URL::to('image/img_avatar1.png')}}" class="media-object" style="width:60px">
+                                        </div>
+                                        <div class="media-body">
+                                        <h4 class="media-heading">{{ $comment->customer_name }}</h4>
+                                        <p>{{ $comment->comment_text }}</p>
+                                        </div>
+                                    </div>
 										@endforeach
-									</ul>
+                                    </ul>
+
 								</div>
 							</div>
 
