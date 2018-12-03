@@ -18,12 +18,13 @@ class SuperAdminController extends Controller
     }
 
     public function logout(){
+        $admin_id=Session::get('admin_id');
         Session::flush();
         return Redirect::to('/admin');
     }
     public function AdminAuthCheck(){
         $admin_id=Session::get('admin_id');
-        if('$admin_id'){
+        if($admin_id){
             return;
         }else{
             return Redirect::to('/admin')->send();

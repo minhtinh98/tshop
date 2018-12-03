@@ -9,11 +9,16 @@ use Illuminate\Http\Request;
 session_start();
 class CommentController extends Controller
 {
-    public function comment(Request $request){
+    public function comment(Request $request,$product_id){
         $data=array();
         $data['comment_text']=$request->comment_text;
+        $data['customer_id']=Session::get('customer_id');
+        $data['product_id']=$product_id;
         $comment_id=DB::table('tbl_comment')->insertGetId($data);
         Session::put('comment_id',$comment_id);
+
+        
+      
         return redirect('/');
     }
     public function all_comment(){

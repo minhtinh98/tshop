@@ -10,7 +10,7 @@
 			<div class="table-responsive cart_info">
                 <?php
                 $contents = Cart::Content();
-
+                
                 ?>
 				<table class="table table-condensed ">
 					<thead>

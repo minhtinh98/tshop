@@ -39,10 +39,13 @@
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="{{URL::to('/admin')}}"><i class="fa fa-user"></i>Quản Trị</a></li>
-                                <?php $customer_id=Session::get('customer_id');
+                                <?php
+                                $customer_name=Session::get('customer_name');
+                                $customer_id=Session::get('customer_id');
                                 $shipping_id=Session::get('shipping_id');
-                                print_r($customer_id);
+                                // print_r($customer_id);
                                 print_r($shipping_id);
+                                echo $customer_name;
                                 ?>
 
                                 <?php if($customer_id != NULL && $shipping_id == NULL){?>
@@ -51,9 +54,11 @@
                                 <?php }else{ ?>
                                     <li><a href="{{URL::to('/login-check')}}"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
                                 <?php } ?>
-								<li><a href="{{URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
+
+								<li><a href="{{URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng ({{ Cart::count() }})</a></li>
                                 <?php
                                 $customer_id=Session::get('customer_id');
+                                 // $customer_id=Session::get('customer_id');
                                 ?>
                                 <?php if($customer_id != NULL){?>
                                 <li><a href="{{URL::to('/customer_logout')}}"><i class="fa fa-lock"></i>Đăng Xuất</a></li>

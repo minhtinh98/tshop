@@ -28,8 +28,13 @@ class HomeController extends Controller
                 ->where('tbl_products.publication_status', 1)
                 ->limit(18)
                 ->get();
+
+        $category_name =DB::table('tbl_category')
+                ->where('category_id', $category_id)
+                ->first();
+
         $manage_product_by_category = view('pages.category_by_products')
-        ->with('product_by_category',$product_by_category);
+        ->with('product_by_category',$product_by_category)->with('category_name',$category_name);
         return view('layout')
         ->with('pages.category_by_products',$manage_product_by_category);
     }
@@ -42,8 +47,11 @@ class HomeController extends Controller
                 ->where('tbl_products.publication_status',1)
                 ->limit(18)
                 ->get();
+        $manufacture_name =DB::table('tbl_manufacture')
+                ->where('manufacture_id', $manufacture_id)
+                ->first();
         $manage_published_product = view('pages.manufacture_by_products')
-        ->with('product_by_manufacture',$product_by_manufacture);
+        ->with('product_by_manufacture',$product_by_manufacture)->with('manufacture_name',$manufacture_name);
         return view('layout')
         ->with('pages.manufacture_by_products',$manage_published_product);
     }
@@ -55,8 +63,14 @@ class HomeController extends Controller
                 ->where('tbl_products.product_id',$product_id)
                 ->where('tbl_products.publication_status',1)
                 ->first();
+      $comment_by_product = DB::table('tbl_comment')
+            ->join('customer','customer.customer_id','=','tbl_comment.customer_id')
+            ->select('*', 'customer.customer_id as uid')
+            ->where('tbl_comment.product_id',$product_id)
+            ->get();
+
         $manage_product_by_details = view('pages.product_details')
-        ->with('product_by_details',$product_by_details);
+        ->with('product_by_details',$product_by_details)->with('comment_by_product',$comment_by_product);
         return view('layout')
         ->with('pages.product_details',$manage_product_by_details);
     }

@@ -48,7 +48,7 @@
                             <?php $customer_id=Session::get('customer_id');
                                 ?>
                             <?php if($customer_id != NULL){?>
-                                <form action="{{url('/comment')}}" method="post">
+                                <form action="{{url('/comment/'.$product_by_details->product_id)}}" method="post">
                                     {{csrf_field()}}
 										<textarea placeholder="Viết bình luận của bạn (Vui lòng gõ tiếng Việt có dấu)" name="comment_text" ></textarea>
 										<input type="submit" class="btn btn-default pull-right" value="Gửi Bình Luận">
@@ -61,6 +61,13 @@
 									</form>
                                 <?php } ?>
 								<div class="col-sm-12">
+									<ul>
+										<p>{{ count($comment_by_product) }}</p>
+										@foreach($comment_by_product as $comment)
+										<p>{{ $comment->customer_name }}</p>
+										<li>{{ $comment->comment_text }}</li>
+										@endforeach
+									</ul>
 								</div>
 							</div>
 
