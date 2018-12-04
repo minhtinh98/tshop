@@ -27,7 +27,7 @@
                         ?>
                     </p>
 					<div class="box-content">
-						<form class="form-horizontal" action="{{ url('/save-category') }}" method="post">
+						<form class="form-horizontal" action="{{ url('/save-category') }}" method="post" id="form-validate">
                         {{csrf_field()}}
 						  <fieldset>
 							<div class="control-group">

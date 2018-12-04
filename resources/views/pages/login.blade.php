@@ -20,12 +20,13 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>Đăng Kí Thành Viên</h2>
-						<form action={{url('/customer_registration')}} method="post">
+						<form action={{url('/customer_registration')}} method="post" id="form-validate">
                             {{csrf_field()}}
-							<input type="text" placeholder="Tên" name="customer_name" required=""/>
-							<input type="email" placeholder="Địa chỉ Email" name="customer_email" required=""/>
-                            <input type="password" placeholder="Mật khẩu" name="password" required=""required=""/>
-                            <input type="text" placeholder="Số Điện thoại" name="mobile_number" required=""/>
+							<input type="text" placeholder="Tên" name="customer_name">
+							<input type="email" placeholder="Địa chỉ Email" name="customer_email">
+                            <input type="password" placeholder="Mật khẩu" name="password" id="password" >
+                            <input type="password" placeholder="Nhập lại Mật khẩu" name="confirm_password" >
+                            <input type="text" placeholder="Số Điện thoại" name="mobile_number">
 							<button type="submit" class="btn btn-default">Đăng Kí</button>
 						</form>
 					</div><!--/sign up form-->

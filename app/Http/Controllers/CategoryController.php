@@ -78,7 +78,7 @@ class CategoryController extends Controller
     }
     public function AdminAuthCheck(){
         $admin_id=Session::get('admin_id');
-        if('$admin_id'){
+        if($admin_id){
             return;
         }else{
             return Redirect::to('/admin')->send();

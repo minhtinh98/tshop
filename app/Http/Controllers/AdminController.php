@@ -26,7 +26,8 @@ class AdminController extends Controller
             return Redirect::to('/dashboard');
         }else{
             Session::put('messege','Email or Password Invaild');
-            return Redirect::to('/admin');
+            Session::flush();
+            return Redirect::to('/admin')->send();
         }
     }
 }

@@ -16,12 +16,10 @@ class CommentController extends Controller
         $data['product_id']=$product_id;
         $comment_id=DB::table('tbl_comment')->insertGetId($data);
         Session::put('comment_id',$comment_id);
-
-        
-      
         return redirect('/');
     }
     public function all_comment(){
+        $this->AdminAuthCheck();
         $all_comment_info = DB::table('tbl_comment')->get();
         $manage_comment = view('admin.all_comment')
         ->with('all_comment_info',$all_comment_info);
@@ -34,5 +32,13 @@ class CommentController extends Controller
         ->delete();
         Session::get('messege','comment Deleted seccessfully !');
         return Redirect::to('/all-comment');
+    }
+    public function AdminAuthCheck(){
+        $admin_id=Session::get('admin_id');
+        if($admin_id){
+            return;
+        }else{
+            return Redirect::to('/admin')->send();
+        }
     }
 }

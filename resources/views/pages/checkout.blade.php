@@ -12,7 +12,7 @@
 						<div class="bill-to">
 							<p>Chi tiết vận chuyển</p>
 							<div class="form-one">
-                                <form action="{{url('/save-shipping-details')}}" method="post">
+                                <form action="{{url('/save-shipping-details')}}" method="post" id="form-validate">
                                 {{csrf_field()}}
 									<input type="text" name="shipping_email" placeholder="Email*" requied="">
 									<input type="text" name="shipping_first_name" placeholder="Họ *" requied="">

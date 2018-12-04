@@ -11,15 +11,16 @@ session_start();
 class ManufactureController extends Controller
 {
     public function index(){
+        $this->AdminAuthCheck();
         return view('admin.add_manufacture');
     }
     public function all_manufacture(){
+        $this->AdminAuthCheck();
         $all_manufacture_info = DB::table('tbl_manufacture')->get();
         $manage_manufacture = view('admin.all_manufacture')
         ->with('all_manufacture_info',$all_manufacture_info);
         return view('admin_layout')
         ->with('admin.all_manufacture',$manage_manufacture);
-
     }
     public function save_manufacture(Request $request){
         $data = array();
@@ -72,5 +73,12 @@ class ManufactureController extends Controller
         Session::get('messege','Manufacture Deleted seccessfully !');
         return Redirect::to('/all-manufacture');
     }
-
+    public function AdminAuthCheck(){
+        $admin_id=Session::get('admin_id');
+        if($admin_id){
+            return;
+        }else{
+            return Redirect::to('/admin')->send();
+        }
+    }
 }

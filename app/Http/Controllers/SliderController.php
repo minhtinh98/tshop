@@ -12,6 +12,7 @@ class SliderController extends Controller
 {
     public function index(){
         return view('admin.add_slider');
+        $this->AdminAuthCheck();
     }
     // lưu slider
     public function save_slider(Request $request){
@@ -39,6 +40,7 @@ class SliderController extends Controller
     }
     // hiện slider
     public function all_slider(){
+        $this->AdminAuthCheck();
         $all_slider =DB::table('tbl_slider')->get();
         $manage_slider = view('admin.all_slider')
         ->with('all_slider',$all_slider);
@@ -68,5 +70,13 @@ class SliderController extends Controller
         ->delete();
         Session::get('messege','slider Deleted seccessfully !');
         return Redirect::to('/all-slider');
+    }
+    public function AdminAuthCheck(){
+        $admin_id=Session::get('admin_id');
+        if($admin_id){
+            return;
+        }else{
+            return Redirect::to('/admin')->send();
+        }
     }
 }
